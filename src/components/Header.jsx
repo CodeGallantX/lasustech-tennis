@@ -9,10 +9,13 @@ const Header = () => {
     return (
         <header>
             <div>
-                <img src="/logo.jpg" />
+                <img src="/logo_cropped.jpg" />
+                <span>LASUSTECH TENNIS CLUB</span>
             </div>
-            <div>
-            </div>
+            <nav>
+                <ul>
+                </ul>
+            </nav>
             <div>
             </div>
         </header>
