@@ -24,7 +24,7 @@ const Hero = () => {
         </p>
         <a
           href="/membership-form"
-          className="px-6 py-3 bg-green-500 text-white text-lg font-semibold hover:bg-blue-600 transition"
+          className="px-6 py-3 bg-[#aed638] text-white text-lg font-semibold hover:bg-blue-600 transition"
         >
           Join the Club
         </a>

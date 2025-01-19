@@ -7,6 +7,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
@@ -105,7 +106,7 @@ const IconsContainer = styled.div`
         position: absolute;
         top: -5px;
         right: -5px;
-        background: green;
+        background: "aed638";
         color: white;
         font-size: 0.75rem;
         font-weight: bold;
