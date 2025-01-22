@@ -54,7 +54,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="px-28 py-20">
+    <section className="px-10 lg:px-16 xl:px-28 py-20">
       <div className="text-center mb-12">
         <span className="text-lg text-gray-500 uppercase tracking-widest">
           PRICING

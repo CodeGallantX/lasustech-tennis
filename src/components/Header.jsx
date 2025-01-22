@@ -218,7 +218,7 @@ const Header = () => {
           </IconsContainer>
           <a
             href="/membership-form"
-            className="px-10 py-4 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition"
+            className="px-6 lg:px-8 xl:px-10 py-3 lg:py-4 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition"
           >
             JOIN OUR CLUB
           </a>

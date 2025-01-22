@@ -35,8 +35,8 @@ const Blog = () => {
   ];
 
   return (
-    <section className="px-28 py-20">
-      <div className="container mx-auto px-4">
+    <section className="px-8 lg:px-16 xl:px-28 py-20">
+      <div className="">
         <div className="text-center">
           <p className="uppercase font-semibold mb-2">From our blog</p>
           <h1 className="text-4xl font-bold mb-6">Recent News</h1>
@@ -50,7 +50,7 @@ const Blog = () => {
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-96 object-cover"
+                className="w-full md:h-80 xl:h-96 object-cover"
               />
               <div className="py-4">
                 <p className="text-sm font-semibold mb-2 uppercase">
