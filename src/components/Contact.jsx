@@ -1,12 +1,10 @@
-import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="px-28 py-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Info Section */}
           <div className="space-y-8">
             <div>
               <p className="text-blue-500 text-sm uppercase tracking-wide">Contact Us</p>

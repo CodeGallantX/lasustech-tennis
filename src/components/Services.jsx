@@ -15,39 +15,32 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             {/* <FaTennisRacket className="text-4xl text-blue-500 mx-auto mb-4" /> */}
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Expert Supervision</h4>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet.</p>
           </div>
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             <FaCalendar className="text-4xl text-blue-500 mx-auto mb-4" />
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Flexible Schedule</h4>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet.</p>
           </div>
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             <FaShower className="text-4xl text-blue-500 mx-auto mb-4" />
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Locker & Shower</h4>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet.</p>
           </div>
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             <FaShoppingBag className="text-4xl text-blue-500 mx-auto mb-4" />
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Premium Members Shop</h4>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet.</p>
           </div>
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             <FaWifi className="text-4xl text-blue-500 mx-auto mb-4" />
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Fast Internet</h4>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet.</p>
           </div>
-          {/* Service Item */}
           <div className="bg-white p-6 shadow-md rounded-md text-center">
             <FaParking className="text-4xl text-blue-500 mx-auto mb-4" />
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Free Parking Spots</h4>

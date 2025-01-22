@@ -35,7 +35,7 @@ const Blog = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="px-28 py-20">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-blue-500 uppercase font-semibold mb-2">From our blog</p>
@@ -45,7 +45,7 @@ const Blog = () => {
           {posts.map((post) => (
             <div
               key={post.id}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
+              className="bg-white shadow-md overflow-hidden"
             >
               <img
                 src={post.image}

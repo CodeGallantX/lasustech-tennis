@@ -17,15 +17,35 @@ const WhatWeOffer = () => {
             <p>We offer a range of membership services to help you improve your tennis game. We offer a range of membership services to help you improve your tennis game.
             </p>
           </div>
-
-          <div>
-            <div className="group flex flex-col items-start justify-start bg-white px-6 py-2 border-r-2 border-r-gray-200 mt-6">
-              <h4 className="text-3xl font-semibold text-gray-900 uppercase">Lockers & Showers</h4>
-              <a href="/services/lockers-showers" className="flex items-center mt-2 text-gray-600 hover:text-gray-900 -translate-x-24 group-hover:translate-x-0  transition-all duration-300 ease-in-out">
-                <span className="mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">READ MORE</span>
-                <HiArrowRight />
-              </a>
-            </div>
+        </div>
+        <div className="grid grid-cols-4 w-full">
+          <div className="group flex flex-col items-start justify-start bg-white px-6 py-2 border-r-2 border-r-gray-200 mt-6">
+            <h4 className="text-3xl font-semibold text-gray-900 uppercase">Lockers & Showers</h4>
+            <a href="/services/lockers-showers" className="flex items-center mt-2 text-gray-600 hover:text-gray-900 -translate-x-24 group-hover:translate-x-0  transition-all duration-300 ease-in-out">
+              <span className="mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">READ MORE</span>
+              <HiArrowRight />
+            </a>
+          </div>
+          <div className="group flex flex-col items-start justify-start bg-white px-6 py-2 border-r-2 border-r-gray-200 mt-6">
+            <h4 className="text-3xl font-semibold text-gray-900 uppercase">Lockers & Showers</h4>
+            <a href="/services/lockers-showers" className="flex items-center mt-2 text-gray-600 hover:text-gray-900 -translate-x-24 group-hover:translate-x-0  transition-all duration-300 ease-in-out">
+              <span className="mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">READ MORE</span>
+              <HiArrowRight />
+            </a>
+          </div>
+          <div className="group flex flex-col items-start justify-start bg-white px-6 py-2 border-r-2 border-r-gray-200 mt-6">
+            <h4 className="text-3xl font-semibold text-gray-900 uppercase">Lockers & Showers</h4>
+            <a href="/services/lockers-showers" className="flex items-center mt-2 text-gray-600 hover:text-gray-900 -translate-x-24 group-hover:translate-x-0  transition-all duration-300 ease-in-out">
+              <span className="mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">READ MORE</span>
+              <HiArrowRight />
+            </a>
+          </div>
+          <div className="group flex flex-col items-start justify-start bg-white px-6 py-2 border-r-2 border-r-gray-200 mt-6">
+            <h4 className="text-3xl font-semibold text-gray-900 uppercase">Lockers & Showers</h4>
+            <a href="/services/lockers-showers" className="flex items-center mt-2 text-gray-600 hover:text-gray-900 -translate-x-24 group-hover:translate-x-0  transition-all duration-300 ease-in-out">
+              <span className="mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">READ MORE</span>
+              <HiArrowRight />
+            </a>
           </div>
         </div>
       </div>

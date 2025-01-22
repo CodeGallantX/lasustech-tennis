@@ -12,7 +12,6 @@ const Footer = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Address */}
           <div>
             <h6 className="text-lg font-semibold mb-4">Address</h6>
             <p className="text-sm">

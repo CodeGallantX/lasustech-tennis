@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { HiMiniBars3BottomLeft, HiOutlineShoppingBag, HiMiniXMark, HiMagnifyingGlass, HiArrowRight } from "react-icons/hi2";
+import { useLocation } from "react-router-dom";
+import {
+  HiMiniBars3BottomLeft,
+  HiOutlineShoppingBag,
+  HiMiniXMark,
+  HiMagnifyingGlass,
+  HiArrowRight,
+} from "react-icons/hi2";
 
 import styled from "styled-components";
 
@@ -11,7 +18,8 @@ const HeaderContainer = styled.header`
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
-  background-color: ${({ scrolled }) => (scrolled ? "black" : "transparent")};
+  background-color: ${({ isHomePage, scrolled }) =>
+    isHomePage && !scrolled ? "transparent" : "black"};
 `;
 
 const Navbar = styled.nav`
@@ -109,7 +117,7 @@ const IconsContainer = styled.div`
         position: absolute;
         top: -5px;
         right: -5px;
-        background: "aed638";
+        background: #aed638;
         color: white;
         font-size: 0.75rem;
         font-weight: bold;
@@ -154,10 +162,11 @@ const Logo = styled.div`
   }
 `;
 
-// Component
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -173,21 +182,28 @@ const Header = () => {
   }, []);
 
   return (
-    <HeaderContainer scrolled={scrolled}>
+    <HeaderContainer isHomePage={isHomePage} scrolled={scrolled}>
       <HeaderContent>
         <Logo>
           <img src="/logo_cropped.jpg" alt="Logo" />
-          <span className="">LASUSTECH TENNIS CLUB</span>
+          <span>LASUSTECH TENNIS CLUB</span>
         </Logo>
 
         <Navbar>
-          <li><a href="/" className="active">
-            HOME
-          </a></li>
-          <li><a href="/about">ABOUT</a></li>
-          <li><a href="#">EVENTS</a></li>
-          {/* <li><a href="#">SHOP</a></li> */}
-          <li><a href="#">CONTACT</a></li>
+          <li>
+            <a href="/" className={isHomePage ? "active" : ""}>
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="/about">ABOUT</a>
+          </li>
+          <li>
+            <a href="#">EVENTS</a>
+          </li>
+          <li>
+            <a href="#">CONTACT</a>
+          </li>
         </Navbar>
 
         <div className="flex flex-row items-center justify-center space-x-8">
@@ -206,18 +222,31 @@ const Header = () => {
             JOIN OUR CLUB
           </a>
         </div>
-        <MobileMenuButton onClick={toggleSidebar}><HiMiniBars3BottomLeft /></MobileMenuButton>
+        <MobileMenuButton onClick={toggleSidebar}>
+          <HiMiniBars3BottomLeft />
+        </MobileMenuButton>
       </HeaderContent>
 
       <Sidebar isSidebarOpen={isSidebarOpen}>
-        <button onClick={toggleSidebar}><HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" /></button>
+        <button onClick={toggleSidebar}>
+          <HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" />
+        </button>
         <div>
-          <ul className="text-5xl flex flex-col items-start justify-center space-y-2 font-semibold ">
-            <li className="text-white"><a href="/">HOME <HiArrowRight className="ml-4 inline-block" /></a></li>
-            <li className="text-white/70 hover:opacity-100"><a href="/about">PAGES</a></li>
-            <li className="text-white/70 hover:opacity-100"><a href="#">EVENTS</a></li>
-            {/* <li className="text-white/70 hover:opacity-100"><a href="#">SHOP</a></li> */}
-            <li className="text-white/70 hover:opacity-100"><a href="#">CONTACT</a></li>
+          <ul className="text-5xl flex flex-col items-start justify-center space-y-2 font-semibold">
+            <li className="text-white">
+              <a href="/">
+                HOME <HiArrowRight className="ml-4 inline-block" />
+              </a>
+            </li>
+            <li className="text-white/70 hover:opacity-100">
+              <a href="/about">PAGES</a>
+            </li>
+            <li className="text-white/70 hover:opacity-100">
+              <a href="#">EVENTS</a>
+            </li>
+            <li className="text-white/70 hover:opacity-100">
+              <a href="#">CONTACT</a>
+            </li>
           </ul>
         </div>
       </Sidebar>
