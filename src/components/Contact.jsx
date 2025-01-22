@@ -3,12 +3,12 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 const Contact = () => {
   return (
     <section className="px-28 py-20">
-      <div className="container mx-auto px-6">
+      <div className="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div>
-              <p className="text-blue-500 text-sm uppercase tracking-wide">Contact Us</p>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
+              <p className="font-bold text-sm uppercase tracking-wide mb-4">Contact Us</p>
+              <h1 className="text-4xl md:text-6xl font-bold leading-snug uppercase">
                 Have questions? <br />
                 Get in touch!
               </h1>
@@ -43,21 +43,21 @@ const Contact = () => {
           </div>
 
           {/* Contact Form Section */}
-          <div className="bg-white shadow-md rounded-lg p-8">
+          <div className="bg-white">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   type="text"
                   name="name"
                   placeholder="Name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
                   required
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
                   required
                 />
               </div>
@@ -66,21 +66,21 @@ const Contact = () => {
                   type="tel"
                   name="phone"
                   placeholder="Phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border-b border-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
                   required
                 />
                 <input
                   type="text"
                   name="subject"
                   placeholder="Subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
                   required
                 />
               </div>
               <textarea
                 name="message"
                 placeholder="How can we help you? Feel free to get in touch!"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
                 rows="5"
                 required
               ></textarea>

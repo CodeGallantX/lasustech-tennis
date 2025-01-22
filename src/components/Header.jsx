@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.8rem 3rem;
+  padding: 0.2rem 3rem;
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
@@ -110,6 +110,7 @@ const IconsContainer = styled.div`
     position: relative;
     color: white;
     font-size: 2rem;
+    cursor: pointer;
 
     &.cart {
       &::after {
@@ -185,7 +186,7 @@ const Header = () => {
     <HeaderContainer isHomePage={isHomePage} scrolled={scrolled}>
       <HeaderContent>
         <Logo>
-          <img src="/logo_cropped.jpg" alt="Logo" />
+          <img src="/logo_cropped.jpg" alt="Logo" className="rounded-full" />
           <span>LASUSTECH TENNIS CLUB</span>
         </Logo>
 
