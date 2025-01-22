@@ -10,9 +10,7 @@ const WhatWeOffer = () => {
           <h2 className="text-3xl font-bold text-gray-900 mt-2">Our Top Membership Services For You</h2>
         </div>
 
-        {/* Offer Icons */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Premium Tools */}
           <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
             <FaTrophy className="text-blue-500 text-4xl mb-4" />
             <h4 className="text-xl font-semibold text-gray-900">Premium Tools</h4>

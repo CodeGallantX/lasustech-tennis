@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { FiShoppingBag, FiSearch } from "react-icons/fi";
+import { HiMiniBars3BottomLeft, HiOutlineShoppingBag, HiMiniXMark, HiMagnifyingGlass } from "react-icons/hi2";
 import styled from "styled-components";
 
-// Styled Components
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
@@ -192,25 +191,27 @@ const Header = () => {
         {/* Icons */}
         <IconsContainer>
           <div className="icon cart">
-            <FiShoppingBag />
+            <HiOutlineShoppingBag />
           </div>
           <div className="icon">
-            <FiSearch />
+            <HiMagnifyingGlass />
           </div>
         </IconsContainer>
 
-        {/* Mobile Menu Button */}
-        <MobileMenuButton onClick={toggleSidebar}>☰</MobileMenuButton>
+        <MobileMenuButton onClick={toggleSidebar}><HiMiniBars3BottomLeft /></MobileMenuButton>
       </HeaderContent>
 
-      {/* Sidebar for Mobile Screens */}
       <Sidebar isSidebarOpen={isSidebarOpen}>
-        <button onClick={toggleSidebar}>✕</button>
-        <a href="#">HOME</a>
-        <a href="#">PAGES</a>
-        <a href="#">EVENTS</a>
-        <a href="#">SHOP</a>
-        <a href="#">CONTACT</a>
+        <button onClick={toggleSidebar}><HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" /></button>
+        <div>
+          <ul className="mobile-navlinks text-5xl flex flex-col items-start justify-center space-y-2 font-semibold ">
+            <li className="text-white"><a href="#">HOME</a></li>
+            <li className="text-white/70 hover:opacity-100"><a href="#">PAGES</a></li>
+            <li className="text-white/70 hover:opacity-100"><a href="#">EVENTS</a></li>
+            <li className="text-white/70 hover:opacity-100"><a href="#">SHOP</a></li>
+            <li className="text-white/70 hover:opacity-100"><a href="#">CONTACT</a></li>
+          </ul>
+        </div>
       </Sidebar>
     </HeaderContainer>
   );
