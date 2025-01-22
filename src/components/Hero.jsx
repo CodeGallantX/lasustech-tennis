@@ -18,14 +18,14 @@ const Hero = () => {
 
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
 
-      <div className="z-10 text-center px-4 space-y-6">
-        <h1 className="text-6xl md:text-[8rem] text-white font-bold">MAKE YOUR GAME</h1>
-        <p className="text-lg md:text-xl">
+      <div className="z-10 text-center px-4">
+        <h1 className="text-6xl md:text-[8rem] text-white font-bold mb-4">MAKE YOUR GAME</h1>
+        <p className="text-lg md:text-xl mb-8">
           The academy offers everything you need to become the best
         </p>
         <a
           href="/membership-form"
-          className="px-8 py-5 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition"
+          className="mt-6 px-8 py-5 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition-all duration-300 ease-in-out"
         >
           JOIN OUR CLUB
         </a>
