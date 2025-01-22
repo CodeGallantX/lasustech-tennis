@@ -7,8 +7,12 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5 , h6 {
+h1, h2, h3, h4, h5 , h6, li {
   font-family: "Barlow Condensed"
+}
+
+span {
+  font-family: "DM sans";
 }
 
 body {
@@ -35,7 +39,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #f7921e;
 } */
-
-.mobile-navlinks {
-  font-family: "Barlow Condensed"
-}

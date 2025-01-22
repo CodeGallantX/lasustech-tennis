@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { HiMiniBars3BottomLeft, HiOutlineShoppingBag, HiMiniXMark, HiMagnifyingGlass } from "react-icons/hi2";
+import { HiMiniBars3BottomLeft, HiOutlineShoppingBag, HiMiniXMark, HiMagnifyingGlass, HiArrowRight } from "react-icons/hi2";
+
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-
+  padding: 0.8rem 3rem;
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
@@ -15,6 +16,8 @@ const HeaderContainer = styled.header`
 
 const Navbar = styled.nav`
   display: none;
+  list-style: none;
+  font-size: 18px;
 
   @media (min-width: 1024px) {
     display: flex;
@@ -97,7 +100,7 @@ const IconsContainer = styled.div`
   .icon {
     position: relative;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     &.cart {
       &::after {
@@ -171,41 +174,45 @@ const Header = () => {
   return (
     <HeaderContainer scrolled={scrolled}>
       <HeaderContent>
-        {/* Logo */}
         <Logo>
           <img src="/logo_cropped.jpg" alt="Logo" />
-          <span>LASUSTECH TENNIS CLUB</span>
+          <span className="">LASUSTECH TENNIS CLUB</span>
         </Logo>
 
-        {/* Desktop Navbar */}
         <Navbar>
-          <a href="#" className="active">
+          <li><a href="#" className="active">
             HOME
-          </a>
-          <a href="#">PAGES</a>
-          <a href="#">EVENTS</a>
-          <a href="#">SHOP</a>
-          <a href="#">CONTACT</a>
+          </a></li>
+          <li><a href="#">PAGES</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">CONTACT</a></li>
         </Navbar>
 
-        {/* Icons */}
-        <IconsContainer>
-          <div className="icon cart">
-            <HiOutlineShoppingBag />
-          </div>
-          <div className="icon">
-            <HiMagnifyingGlass />
-          </div>
-        </IconsContainer>
-
+        <div className="flex flex-row items-center justify-center space-x-8">
+          <IconsContainer>
+            <div className="icon cart">
+              <HiOutlineShoppingBag />
+            </div>
+            <div className="icon">
+              <HiMagnifyingGlass />
+            </div>
+          </IconsContainer>
+          <a
+            href="/membership-form"
+            className="px-10 py-4 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition"
+          >
+            JOIN OUR CLUB
+          </a>
+        </div>
         <MobileMenuButton onClick={toggleSidebar}><HiMiniBars3BottomLeft /></MobileMenuButton>
       </HeaderContent>
 
       <Sidebar isSidebarOpen={isSidebarOpen}>
         <button onClick={toggleSidebar}><HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" /></button>
         <div>
-          <ul className="mobile-navlinks text-5xl flex flex-col items-start justify-center space-y-2 font-semibold ">
-            <li className="text-white"><a href="#">HOME</a></li>
+          <ul className="text-5xl flex flex-col items-start justify-center space-y-2 font-semibold ">
+            <li className="text-white"><a href="#">HOME <HiArrowRight className="ml-4 inline-block" /></a></li>
             <li className="text-white/70 hover:opacity-100"><a href="#">PAGES</a></li>
             <li className="text-white/70 hover:opacity-100"><a href="#">EVENTS</a></li>
             <li className="text-white/70 hover:opacity-100"><a href="#">SHOP</a></li>
