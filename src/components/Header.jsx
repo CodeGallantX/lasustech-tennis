@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.2rem 3rem;
+  padding: 0.2rem 3.4rem;
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
