@@ -18,6 +18,7 @@ const Navbar = styled.nav`
   display: none;
   list-style: none;
   font-size: 18px;
+  font-weight: bold;
 
   @media (min-width: 1024px) {
     display: flex;
@@ -180,12 +181,12 @@ const Header = () => {
         </Logo>
 
         <Navbar>
-          <li><a href="#" className="active">
+          <li><a href="/" className="active">
             HOME
           </a></li>
-          <li><a href="#">PAGES</a></li>
+          <li><a href="/about">ABOUT</a></li>
           <li><a href="#">EVENTS</a></li>
-          <li><a href="#">SHOP</a></li>
+          {/* <li><a href="#">SHOP</a></li> */}
           <li><a href="#">CONTACT</a></li>
         </Navbar>
 
@@ -212,10 +213,10 @@ const Header = () => {
         <button onClick={toggleSidebar}><HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" /></button>
         <div>
           <ul className="text-5xl flex flex-col items-start justify-center space-y-2 font-semibold ">
-            <li className="text-white"><a href="#">HOME <HiArrowRight className="ml-4 inline-block" /></a></li>
-            <li className="text-white/70 hover:opacity-100"><a href="#">PAGES</a></li>
+            <li className="text-white"><a href="/">HOME <HiArrowRight className="ml-4 inline-block" /></a></li>
+            <li className="text-white/70 hover:opacity-100"><a href="/about">PAGES</a></li>
             <li className="text-white/70 hover:opacity-100"><a href="#">EVENTS</a></li>
-            <li className="text-white/70 hover:opacity-100"><a href="#">SHOP</a></li>
+            {/* <li className="text-white/70 hover:opacity-100"><a href="#">SHOP</a></li> */}
             <li className="text-white/70 hover:opacity-100"><a href="#">CONTACT</a></li>
           </ul>
         </div>

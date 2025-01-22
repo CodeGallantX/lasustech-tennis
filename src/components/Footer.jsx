@@ -1,88 +1,92 @@
-import React from 'react';
+import { FaFacebook, FaTwitter, FaDribbble, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        {/* Address Section */}
-        <div>
-          <h6 className="text-lg font-semibold mb-2">Address</h6>
-          <p>The USA — 11792 London Rd, Derby, OH 43117, US</p>
+    <footer className="bg-gray-900 text-white py-28 px-20">
+      <div className="container mx-auto px-4">
+        {/* Main Title */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            We&apos;re proud to be <br /> the best
+          </h1>
         </div>
 
-        {/* Say Hello Section */}
-        <div>
-          <h6 className="text-lg font-semibold mb-2">Say Hello</h6>
-          <p>
-            <a href="mailto:info@email.com" className="text-blue-400 hover:underline">
-              info@email.com
-            </a>
-          </p>
-          <p>
-            <a href="tel:+18005554565" className="text-blue-400 hover:underline">
-              +1 800 555 45 65
-            </a>
-          </p>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Address */}
+          <div>
+            <h6 className="text-lg font-semibold mb-4">Address</h6>
+            <p className="text-sm">
+              The USA — <br />
+              11792 London Rd, Derby, <br />
+              OH 43117, US
+            </p>
+          </div>
 
-        {/* Socials Section */}
-        <div>
-          <h6 className="text-lg font-semibold mb-2">Socials</h6>
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/ThemeRexStudio" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">
-                Facebook
+          {/* Contact */}
+          <div>
+            <h6 className="text-lg font-semibold mb-4">Say Hello</h6>
+            <p className="text-sm mb-2">
+              <a
+                href="mailto:info@email.com"
+                className="underline hover:text-gray-400"
+              >
+                info@email.com
               </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/ThemerexThemes" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">
-                Twitter
+            </p>
+            <p className="text-sm">
+              <a href="tel:+18005554565" className="hover:text-gray-400">
+                +1 800 555 45 65
               </a>
-            </li>
-            <li>
-              <a href="https://dribbble.com/ThemeREX" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">
-                Dribbble
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/themerex_net/" target="_blank" rel="nofollow" className="text-blue-400 hover:underline">
-                Instagram
-              </a>
-            </li>
-          </ul>
-        </div>
+            </p>
+          </div>
 
-        {/* Newsletter Section */}
-        <div>
-          <h6 className="text-lg font-semibold mb-2">Newsletter</h6>
-          <form action="#" method="post">
-            <input
-              type="email"
-              name="EMAIL"
-              placeholder="Enter Your Email Address"
-              className="w-full p-2 mb-4 text-black rounded-md"
-            />
-            <div className="flex items-center mb-4">
-              <input
-                type="checkbox"
-                name="i_agree_privacy_policy"
-                id="privacy-policy"
-                required
-                className="mr-2"
-              />
-              <label htmlFor="privacy-policy" className="text-sm">
-                I agree to the{' '}
-                <a href="/privacy-policy" className="text-blue-400 hover:underline">
-                  Privacy Policy
-                </a>
-                .
-              </label>
+          {/* Social Links */}
+          <div>
+            <h6 className="text-lg font-semibold mb-4">Socials</h6>
+            <div className="flex space-x-4">
+              <a
+                href="https://www.facebook.com/ThemeRexStudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl hover:text-blue-500"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://twitter.com/ThemerexThemes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl hover:text-blue-400"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://dribbble.com/ThemeREX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl hover:text-pink-400"
+              >
+                <FaDribbble />
+              </a>
+              <a
+                href="https://www.instagram.com/themerex_net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl hover:text-pink-500"
+              >
+                <FaInstagram />
+              </a>
             </div>
-            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md">
-              Subscribe
-            </button>
-          </form>
+          </div>
+
+          {/* Extra Column */}
+          <div>
+            <h6 className="text-lg font-semibold mb-4">About Us</h6>
+            <p className="text-sm">
+              We are a dedicated team providing exceptional services with
+              integrity and excellence.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
