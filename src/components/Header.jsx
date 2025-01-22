@@ -186,7 +186,7 @@ const Header = () => {
     <HeaderContainer isHomePage={isHomePage} scrolled={scrolled}>
       <HeaderContent>
         <Logo>
-          <img src="/logo_cropped.jpg" alt="Logo" className="rounded-full" />
+          <img src="/logo_cropped.jpg" alt="Logo" className="rounded-full w-40 h-auto" />
           <span>LASUSTECH TENNIS CLUB</span>
         </Logo>
 

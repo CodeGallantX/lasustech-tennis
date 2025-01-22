@@ -42,22 +42,21 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form Section */}
           <div className="bg-white">
             <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-black">
                 <input
                   type="text"
                   name="name"
                   placeholder="Name"
-                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
+                  className="w-full px-4 py-3 placeholder:text-black/70 focus:placeholder:text-black border-b-2 border-b-black/20 outline-none hover:border-b-black/100 focus:border-b-black/100 transition-all duration-300 ease-in-out"
                   required
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
+                  className="w-full px-4 py-3 placeholder:text-black/70 focus:placeholder:text-black  border-b-2 border-b-black/20 outline-none hover:border-b-black/100 focus:border-b-black/100 transition-all duration-300 ease-in-out"
                   required
                 />
               </div>
@@ -66,27 +65,27 @@ const Contact = () => {
                   type="tel"
                   name="phone"
                   placeholder="Phone"
-                  className="w-full px-4 py-3 border-b border-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
+                  className="w-full px-4 py-3 placeholder:text-black/70 focus:placeholder:text-black border-b-2 border-b-black/20 outline-none hover:border-b-black/100 focus:border-b-black/100 transition-all duration-300 ease-in-out"
                   required
                 />
                 <input
                   type="text"
                   name="subject"
                   placeholder="Subject"
-                  className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
+                  className="w-full px-4 py-3 placeholder:text-black/70 focus:placeholder:text-black border-b-2 border-b-black/20 outline-none hover:border-b-black/100 focus:border-b-black/100 transition-all duration-300 ease-in-out"
                   required
                 />
               </div>
               <textarea
                 name="message"
                 placeholder="How can we help you? Feel free to get in touch!"
-                className="w-full px-4 py-3 border-b border-b-gray-300 outline-none focus:border-b-black transition-all duration-300 ease-in-out"
-                rows="5"
+                className="w-full px-4 py-3 placeholder:text-black/70 focus:placeholder:text-black border-b-2 border-b-black/20 outline-none hover:border-b-black/100 focus:border-b-black/100 transition-all duration-300 ease-in-out"
+                rows="4"
                 required
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition"
+                className="mt-6 px-10 py-4 bg-[#aed638] text-white font-semibold hover:bg-white hover:text-[#aed638] transition-all duration-300 ease-in-out"
               >
                 Get In Touch
               </button>
