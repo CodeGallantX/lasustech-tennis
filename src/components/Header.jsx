@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   HiMiniBars3BottomLeft,
-  HiOutlineShoppingBag,
   HiMiniXMark,
   HiMagnifyingGlass,
   HiArrowRight,
@@ -14,12 +13,19 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.2rem 3.4rem;
   width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
   background-color: ${({ isHomePage, scrolled }) =>
     isHomePage && !scrolled ? "transparent" : "black"};
+  padding: 0.5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0.5rem 2rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 0.75rem 4rem;
+  }
 `;
 
 const Navbar = styled.nav`
@@ -101,39 +107,41 @@ const Sidebar = styled.div`
   }
 `;
 
-const IconsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+const JoinButton = styled.a`
+  display: none;
 
-  .icon {
-    position: relative;
+  @media (min-width: 1024px) {
+    display: block;
+    padding: 0.75rem 2rem;
+    background: #aed638;
     color: white;
-    font-size: 2rem;
-    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 
-    &.cart {
-      &::after {
-        content: "0";
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background: #aed638;
-        color: white;
-        font-size: 0.75rem;
-        font-weight: bold;
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    &:hover {
+      background: white;
+      color: #aed638;
     }
   }
+`;
 
-  @media (max-width: 1024px) {
-    display: none;
+const SearchBar = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  background: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 `;
 
@@ -141,8 +149,6 @@ const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  color: white;
 `;
 
 const Logo = styled.div`
@@ -151,9 +157,10 @@ const Logo = styled.div`
   gap: 1rem;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
+    border-radius: 50%;
   }
 
   span {
@@ -166,6 +173,7 @@ const Logo = styled.div`
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -173,9 +181,13 @@ const Header = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const toggleSearch = () => {
+    setSearchVisible(!searchVisible);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -186,8 +198,8 @@ const Header = () => {
     <HeaderContainer isHomePage={isHomePage} scrolled={scrolled}>
       <HeaderContent>
         <Logo>
-          <img src="/logo_cropped.jpg" alt="Logo" className="rounded-full w-40 h-auto" />
-          <span>LASUSTECH TENNIS CLUB</span>
+          <img src="/logo_cropped.jpg" alt="Logo" />
+          <span className="absolute -top-40 lg:static opacity-0 lg:opacity-100">LASUSTECH TENNIS CLUB</span>
         </Logo>
 
         <Navbar>
@@ -207,51 +219,39 @@ const Header = () => {
           </li>
         </Navbar>
 
-        <div className="flex flex-row items-center justify-center space-x-8">
-          <IconsContainer>
-            <div className="icon cart">
-              <HiOutlineShoppingBag />
-            </div>
-            <div className="icon">
-              <HiMagnifyingGlass />
-            </div>
-          </IconsContainer>
-          <a
-            href="/membership-form"
-            className="px-6 lg:px-8 xl:px-10 py-3 lg:py-4 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition"
-          >
-            JOIN OUR CLUB
-          </a>
+        <div className="flex flex-row items-center justify-end space-x-4">
+          <HiMagnifyingGlass onClick={toggleSearch} className="hidden lg:block text-white text-3xl cursor-pointer ml-auto" />
+          <JoinButton href="/membership-form">JOIN OUR CLUB</JoinButton>
         </div>
         <MobileMenuButton onClick={toggleSidebar}>
           <HiMiniBars3BottomLeft />
         </MobileMenuButton>
       </HeaderContent>
 
+      <SearchBar isVisible={searchVisible}>
+        <input type="text" placeholder="Search..." />
+      </SearchBar>
+
       <Sidebar isSidebarOpen={isSidebarOpen}>
         <button onClick={toggleSidebar}>
-          <HiMiniXMark className="text-4xl hover:rotate-180 transition-all duration-300 ease-in-out" />
+          <HiMiniXMark />
         </button>
-        <div>
-          <ul className="text-5xl flex flex-col items-start justify-center space-y-2 font-semibold">
-            <li className="text-white">
-              <a href="/">
-                HOME <HiArrowRight className="ml-4 inline-block" />
-              </a>
-            </li>
-            <li className="text-white/70 hover:opacity-100">
-              <a href="/about">PAGES</a>
-            </li>
-            <li className="text-white/70 hover:opacity-100">
-              <a href="#">EVENTS</a>
-            </li>
-            <li className="text-white/70 hover:opacity-100">
-              <a href="#">CONTACT</a>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <a href="/">HOME <HiArrowRight /></a>
+          </li>
+          <li>
+            <a href="/about">ABOUT</a>
+          </li>
+          <li>
+            <a href="#">EVENTS</a>
+          </li>
+          <li>
+            <a href="#">CONTACT</a>
+          </li>
+        </ul>
       </Sidebar>
-    </HeaderContainer>
+    </HeaderContainer >
   );
 };
 
