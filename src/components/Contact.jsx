@@ -85,7 +85,7 @@ const Contact = () => {
               ></textarea>
               <button
                 type="submit"
-                className="mt-6 px-10 py-4 bg-[#aed638] text-white font-semibold hover:bg-white hover:text-[#aed638] transition-all duration-300 ease-in-out"
+                className="mt-6 uppercase px-10 py-4 bg-[#aed638] text-white font-semibold"
               >
                 Get In Touch
               </button>

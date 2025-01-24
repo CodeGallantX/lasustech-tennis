@@ -24,7 +24,8 @@ const Hero = () => {
           The academy offers everything you need to become the best
         </p>
         <a
-          href="/membership-form"
+          href="/membership-form.pdf"
+          target="_blank"
           className="mt-6 px-8 py-5 bg-[#aed638] text-white text-sm font-semibold hover:bg-white hover:text-[#aed638] transition-all duration-300 ease-in-out"
         >
           JOIN OUR CLUB

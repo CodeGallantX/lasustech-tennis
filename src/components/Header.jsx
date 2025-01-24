@@ -203,6 +203,7 @@ const Header = () => {
         </Logo>
 
         <Navbar>
+          <ul className="text-xl font-medium flex flex-row items-center justify-center space-x-6">
           <li>
             <a href="/" className={isHomePage ? "active" : ""}>
               HOME
@@ -215,13 +216,17 @@ const Header = () => {
             <a href="#">EVENTS</a>
           </li>
           <li>
+            <a href="#">BLOG</a>
+          </li>
+          <li>
             <a href="#">CONTACT</a>
           </li>
+          </ul>
         </Navbar>
 
         <div className="flex flex-row items-center justify-end space-x-4">
           <HiMagnifyingGlass onClick={toggleSearch} className="hidden lg:block text-white text-3xl cursor-pointer ml-auto" />
-          <JoinButton href="/membership-form">JOIN OUR CLUB</JoinButton>
+          <JoinButton href="/membership-form.pdf" target="_blank">JOIN OUR CLUB</JoinButton>
         </div>
         <MobileMenuButton onClick={toggleSidebar}>
           <HiMiniBars3BottomLeft />
@@ -233,10 +238,13 @@ const Header = () => {
       </SearchBar>
 
       <Sidebar isSidebarOpen={isSidebarOpen}>
+      <div className="w-14 rounded-full absolute top-4 left-4">
+          <img src="/logo_cropped.jpg" alt="Logo" className="rounded-full" />
+        </div>
         <button onClick={toggleSidebar}>
-          <HiMiniXMark />
+          <HiMiniXMark className="text-4xl hover:rotate-180 opacity-70 hover:opacity-100 transition-all duration-200 ease-in-out"/>
         </button>
-        <ul>
+        <ul className="text-xl flex flex-col items-start justify-start space-y-4">
           <li>
             <a href="/">HOME <HiArrowRight /></a>
           </li>
