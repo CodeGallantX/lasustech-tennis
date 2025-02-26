@@ -1,36 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.getElementById("sidebar");
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const closeSidebarButton = document.getElementById("close-sidebar");
-    const searchButton = document.getElementById("search-button");
-    const searchBar = document.getElementById("search-bar");
-    
-    let isSidebarOpen = false;
-    let isSearchVisible = false;
+const sidebar = document.getElementById("sidebar");
+const menuToggle = document.getElementById("menuToggle");
+const closeSidebar = document.getElementById("closeSidebar");
+const searchToggle = document.getElementById("searchToggle");
+const searchBar = document.getElementById("searchBar");
+const header = document.getElementById("header");
+const heroSection = document.getElementById("hero"); // Ensure the hero section has this ID
 
-    mobileMenuButton.addEventListener("click", () => {
-        isSidebarOpen = !isSidebarOpen;
-        sidebar.classList.toggle("top-0", isSidebarOpen);
-        sidebar.classList.toggle("-top-full", !isSidebarOpen);
-    });
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("-translate-x-full");
+});
 
-    closeSidebarButton.addEventListener("click", () => {
-        isSidebarOpen = false;
-        sidebar.classList.remove("top-0");
-        sidebar.classList.add("-top-full");
-    });
+closeSidebar.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+});
 
-    searchButton.addEventListener("click", () => {
-        isSearchVisible = !isSearchVisible;
-        searchBar.classList.toggle("hidden", !isSearchVisible);
-    });
+searchToggle.addEventListener("click", () => {
+    searchBar.classList.toggle("hidden");
+});
 
-    window.addEventListener("scroll", () => {
-        const header = document.getElementById("header");
-        if (window.scrollY > 300) {
-            header.classList.add("bg-black");
-        } else {
-            header.classList.remove("bg-black");
-        }
-    });
+window.addEventListener("scroll", () => {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+    if (heroBottom <= 50) {
+        header.classList.add("bg-[#333]");
+    } else {
+        header.classList.remove("bg-[#333]");
+    }
 });
